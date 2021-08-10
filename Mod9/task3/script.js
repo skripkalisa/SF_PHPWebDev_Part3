@@ -8,7 +8,6 @@ const setSpeed = (n) => {
     el.setAttribute('style', `animation-duration: ${n}s;`)
 }
 const trafficSpeed = (n) => {
-  console.log("speed");
   switch (n) {
     case 0:
       setSpeed(0)
