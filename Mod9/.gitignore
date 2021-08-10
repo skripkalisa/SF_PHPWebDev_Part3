@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+*.sublime*
+.vscode
+node_modules/
+dist/
+!.gitignore
+package-lock.json
+pug/
+scripts/
+static/
+styles/
+*.pug
+gulp/

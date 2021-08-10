@@ -21,5 +21,5 @@
   - [Веб версия домашнего задания](https://skripkalisa.github.io/SF_PHPWebDev_Part3/Mod12/index.html)
 
 [Модуль 13 - Базовый JS. Функции и объекты + тренажёр по JavaScript](Mod13/ "[Модуль 13 - Базовый JS. Функции и объекты + тренажёр по JavaScript")
-  - [Веб версия домашнего задания](https://skripkalisa.github.io/SF_PHPWebDev_Part13/Mod8/index.html)
+  - [Веб версия домашнего задания](https://skripkalisan.github.io/SF_PHPWebDev_Part13/Mod8/index.html)
 
