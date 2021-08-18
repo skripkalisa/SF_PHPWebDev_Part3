@@ -1,10 +1,4 @@
-// let rangeStart = parseInt(prompt('Минимальное знание числа для игры', '0'));
-// let rangeEnd = parseInt(prompt('Максимальное знание числа для игры', '100'));
-// alert(`Загадайте любое целое число от ${rangeStart} до ${rangeEnd}, а я его угадаю`);
-
-
 console.clear();
-
 
 const limitsSetter = document.getElementById('setLimits')
 const answerField = document.getElementById('answerField')
@@ -182,5 +176,4 @@ window.onload = function () {
   var myModalEl = document.querySelector('#getLimits')
   var modal = bootstrap.Modal.getOrCreateInstance(myModalEl)
   modal.show()
-  // startGame()
 }
