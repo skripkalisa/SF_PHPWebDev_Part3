@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Игра на JavaScript" />
+  <title>Угадайка</title>
+
+  <!--  -->
+  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+  <script defer src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+  <script defer src="script.js"></script>
+  <!--  -->
+  <!-- Bootstrap 5 -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.0/cosmo/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+  <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script> -->
+  <!-- Bootstrap 5 -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="dialog" data-role="dialog" id="setLimits">
+      <div class="dialog-title">Укажите диапазон чисел</div>
+      <div class="dialog-content">
+        <p>
+          А я попробую угадать число.
+        </p>
+      </div>
+      <div class="dialog-content">
+
+        <input data-role="doubleslider" data-accuracy="1" data-hint="true" data-hint-position-min="top"
+          data-hint-position-max="top" data-min="0" data-max="1000">
+      </div>
+
+      <div class="dialog-actions">
+        <button class="button js-dialog-close">Закрыть</button>
+        <button class="button primary js-dialog-close">Начать игру</button>
+      </div>
+    </div>
+
+
+
+    <div class="row game-card align-items-center">
+      <div class="col col-md-4 offset-md-4">
+        <div class="card text-center">
+          <div class="card-header">
+            <p class="m-0">Вопрос №<span id="stepField">5</span></p>
+          </div>
+          <div class="card-body">
+            <div class="row no-gutters">
+              <div class="col">
+                <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="btn-group">
+              <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
+              <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
+              <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+            </div>
+          </div>
+          <div class="card-footer flex-justify-center">
+            <!-- <button class="btn btn-link" id="btnRetry">Заново</button> -->
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="btnRetry"
+              data-bs-target="#getLimits" data-bs-whatever="@mdo">Заново
+            </button> -->
+            <button class="button primary rounded shadowed" onclick="Metro.dialog.open('#setLimits')">Заново</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
