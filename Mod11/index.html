@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Игра на JavaScript" />
+  <title>Угадайка</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.0/cosmo/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  <!-- Bootstrap 5 -->
+
+  <script defer src="js/multithumb-slider.js"></script>
+  <script defer src="js/script.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/multithumb-slider.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="modal  fade" id="getLimits" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Укажите диапазон чисел
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>И загадайте число</p>
+            <p>А я попробую его угадать</p>
+            <form id="setLimits">
+              <div class="mb-3">
+                <label for="minimum" class="col-form-label">Min Number:</label>
+                <input type="number" data-min="0" class="form-control" id="minimum">
+                <label for="maximum" class="col-form-label">Max Number:</label>
+                <input type="number" data-max="100" class="form-control" id="maximum">
+              </div>
+              <div class="mb-3">
+                <p>Диапазон должен быть задан в пределах от -999 до 999</p>
+                <p>Значения, выходящие за эти рамки будут изменены на указанные</p>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+
+            <button id="start" type="button" class="btn btn-primary" data-bs-backdrop="static"
+              data-bs-dismiss="modal">Начать игру
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row game-card align-items-center">
+      <div class="col col-md-4 offset-md-4">
+        <div class="card text-center">
+          <div class="card-header">
+            <p class="m-0"><span id="stepField">Укажите диапазон и</span></p>
+          </div>
+          <div class="card-body">
+            <div class="row no-gutters">
+              <div class="col">
+                <h3 class="card-title m-0"><span id="answerField">загадайте число </span></h3>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="btn-group">
+              <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
+              <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
+              <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+            </div>
+          </div>
+          <div class="card-footer">
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="btnRetry"
+              data-bs-target="#getLimits">Начать заново
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
