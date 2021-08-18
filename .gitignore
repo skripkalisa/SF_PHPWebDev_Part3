@@ -12,5 +12,6 @@ static/
 styles/
 *.pug
 gulp/
-*.html
-*.js
+./*.html
+./*.js
+resources/
