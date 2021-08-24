@@ -15,3 +15,6 @@ gulp/
 ./*.html
 ./*.js
 resources/
+mod12.js
+test.js
+*.zip

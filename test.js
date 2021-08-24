@@ -162,3 +162,171 @@ let N = 1000000
 console.log(Math.log2(N) + 1);
 
 // LRdWdi5mJbge5vM
+
+console.clear();
+
+for (let i = 0, j = 0; i < 3 && j < 12; i += 1, j += 3) 
+  console.log(i, j);
+
+// for (const i = 0;;) 
+// {
+//   console.log(i)
+//   let j = 0
+//   j++
+//   if (j == 5)
+//     break
+//   }
+
+// for (const i = 0, const j = 0;;) {
+//   console.log(i, j);
+// }
+
+// for (let i = 0, j = 0;;) 
+//   console.log(i, j);
+
+// while (a = 5){
+//   console.log(a);
+// }
+
+// do 
+//   {console.log("sd") }
+//   while (a === true)
+
+// obj = {'sdf':[ 43, [2,3,4,]]}
+
+// for (let i in obj) 
+//   console.log(i);
+
+// console.clear();
+
+// применение метода
+const kinds = ['Мангустин', 'Дуриан', 'Личи', 'Карамбола'];
+const years = [[2017, 2018], [2017, 2018, 2019, 2020], [2020], [2019, 2020]];
+// объединяем информацию и формируем массив объектов
+const fruits = kinds.map((kind, index) => ({
+  kind,  // напоминание: это деструктуризация объекта
+  years: years[index]
+}));
+
+console.log(fruits)  // массив экзотических фруктов (уже представленных объектами)
+
+// без цепочки вызовов
+const filteredFruites = fruits.filter(el => {
+  const years = el.years;
+  return years.includes(2017) && years.includes(2018);
+});
+const filteredKinds1 = filteredFruites.map(el => el.kind);
+console.log(filteredKinds1);  // ['Мангустин', 'Дуриан']
+
+// с цепочкой вызовов
+const filteredKinds2 = fruits
+  .filter(el => {
+    const years = el.years;
+    return years.includes(2017) && years.includes(2018);
+  })
+  .map(el => el.kind);
+console.log(filteredKinds2)  // ['Мангустин', 'Дуриан']
+
+
+const arr = [1, 2, 3, 4];
+
+// суммирование с циклом for
+let sum1 = 0;
+for (let i = 0; i < arr.length; i++) {
+	sum1 += arr[i];
+}
+
+// суммирование с методом forEach
+let sum2  = 0;
+arr.forEach(el => sum2 += el);
+
+// суммирование с методом reduce
+const sum3 = arr.reduce((a, b) => a + b);  // initialValue по умолчанию равно 0 
+// аналогичная подробная запись
+// const sum3 = arr.reduce((accumulator, element) => {
+//   return accumulator + element
+// }, 0);
+
+console.log(sum1, sum2, sum3)  // 10 10 10
+
+
+const votes = ['Берни Сандерс', 'Дональд Трамп', 'Дональд Трамп', 'Джо Байден', 'Берни Сандерс', 'Джо Байден', 'Джо Байден', 'Берни Сандерс', 'Джо Байден', 'Джо Байден', 'Дональд Трамп', 'Дональд Трамп', 'Джо Байден', 'Берни Сандерс', 'Дональд Трамп', 'Берни Сандерс', 'Дональд Трамп', 'Дональд Трамп', 'Джо Байден', 'Берни Сандерс', 'Дональд Трамп', 'Джо Байден', 'Дональд Трамп', 'Джо Байден', 'Берни Сандерс', 'Джо Байден', 'Джо Байден', 'Дональд Трамп', 'Дональд Трамп', 'Джо Байден', 'Берни Сандерс'];
+
+const result = votes.reduce((result, vote) => {
+  result[vote] ? result[vote]++ : result[vote] = 1;
+  return result;
+}, {})
+
+console.log(result);
+// {
+//   'Берни Сандерс': 8,
+//   'Дональд Трамп': 11,
+//   'Джо Байден': 12
+// }
+
+console.log([3, 2, 1].reduce(Math.pow));
+
+
+console.log(Math.max(...[1, 13, 175, -123]));
+
+
+// перебор ключей / значений / элементов в объекте
+const obj1 = { red: 255, green: 0, blue: 0, opacity: .3 };
+
+Object.keys(obj1).forEach(key => console.log(key)); 
+Object.values(obj1).forEach(value => console.log(value)); 
+Object.entries(obj1).forEach(entry => console.log(entry)); 
+
+// перебор ключей / значений / элементов в Map
+const map1 = new Map([['red', 255], ['green', 0], ['blue', 0], ['opacity', .3]]);
+
+for (let [key,] of map1) console.log(key);
+for (let key of map1.keys()) console.log(key);
+for (let [,value] of map1) console.log(value);
+for (let value of map1.values()) console.log(value);
+for (let [key, value] of map1) console.log(key, value);
+for (let entry of map1.entries()) console.log(entry);
+
+console.clear();
+
+const object = {};
+const foo = () => null;
+const array = [];
+const bool = true;
+
+const map = new Map();
+
+map.set(foo, 'my function');
+map.set(object, 'my object');
+map.set(array, 'my array');
+map.set(bool, 'by boolean');
+map.set(NaN, 'my NaN');
+
+console.log(map)  // {ƒ => "my function", {...} => "my object", Array(0) => "my array", true => "by boolean", NaN => "my NaN"}
+
+
+const map10 = new Map(); 
+map10.set(NaN, 1/0);
+console.log(map10.get(NaN));
+
+// перебор ключей / значений / элементов в объекте
+const obj10 = { red: 255, green: 0, blue: 0, opacity: .3 };
+
+Object.keys(obj10).forEach(key => console.log(key)); 
+Object.values(obj10).forEach(value => console.log(value)); 
+Object.entries(obj10).forEach(entry => console.log(entry)); 
+
+// перебор ключей / значений / элементов в Map
+const set1 = new Set([['red', 255], ['green', 0], ['blue', 0], ['opacity', .3]]);
+
+// все выводы в консоль одинаковы, так как ключ и есть значение
+// присутствует для обратной совместимостью с Map
+for (let value of set1) console.log(value);
+for (let key of set1.keys()) console.log(key);
+for (let value of set1.values()) console.log(value);
+for (let [key, value] of set1.entries()) console.log(key);
+for (let [key, value] of set1.entries()) console.log(value);
+
+const arr20 = ['a', 'ab', 'ab', 'aba', 'abaa', 'a'];
+const uniq = [...new Set(arr20)];
+console.log(uniq);
