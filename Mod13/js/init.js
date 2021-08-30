@@ -11,7 +11,8 @@ const generator = function (initPerson) {
   document.getElementById('genderOutput').innerText = initPerson.gender
   document.getElementById('birthDateOutput').innerText = initPerson.birthDate
   document.getElementById('birthYearOutput').innerText = initPerson.birthYear
-  document.getElementById('occupation').innerText = initPerson.occupation
+  document.getElementById('occupation').innerText =
+    initPerson.occupation.toLowerCase()
 }
 
 const init = function () {

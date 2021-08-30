@@ -207,7 +207,7 @@ const personGenerator = {
     this.person.firstName = 'Гадя'
     this.person.lastName = 'Хренова'
     this.person.patronymicName = 'Петрович'
-    this.person.birthYear = 'Не помню'
+    this.person.birthYear = 'не помню'
     this.person.birthDate = ''
     this.person.occupation = 'Потерялась я'
   },
