@@ -5,7 +5,6 @@ const card = document.querySelector('#generatorCard')
 
 const generator = function (initPerson) {
   document.getElementById('firstNameOutput').innerText = initPerson.firstName
-
   document.getElementById('lastNameOutput').innerText = initPerson.lastName
   document.getElementById('patronymicNameOutput').innerText =
     initPerson.patronymicName
