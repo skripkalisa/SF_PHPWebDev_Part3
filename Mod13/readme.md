@@ -27,7 +27,9 @@
 
 [Шаблон проекта на GitHub.](https://github.com/SkillfactoryCoding/php/tree/master/bjs/10_function_object)
 
-### Критерии оценки выполненного задания
+---
+
+## Критерии оценки выполненного задания
 
 **0 баллов**
 
