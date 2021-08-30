@@ -1,0 +1,13 @@
+.male {
+  background-color: rgb(240, 246, 248);
+  color: darkblue;
+}
+
+.female {
+  background-color: rgb(255, 242, 245);
+  color: rgb(124, 0, 177);
+}
+
+.embed h2 {
+  font-size: 2rem;
+}

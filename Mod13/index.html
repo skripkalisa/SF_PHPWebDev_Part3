@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Генератор случайных пользователей</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans"
+      rel="stylesheet"
+    />
+
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Compiled and minified JavaScript -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"
+    ></script>
+    <script defer src="js/personGenerator.js"></script>
+    <script defer src="js/init.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row center-align">
+        <div class="col m12">
+          <div class="card grey lighten-5 grey-text text-darken-4">
+            <div id="generatorCard" class="card-content">
+              <span class="card-title">Окно результатов генерации</span>
+              <h3>
+                <span id="lastNameOutput">Генерация фамилии</span>
+              </h3>
+              <h4>
+                <span id="firstNameOutput">Иван</span>
+              </h4>
+              <h4>
+                <span id="patronymicNameOutput">Иван</span>
+              </h4>
+              <p>
+                <span id="genderOutput">Генерация пола</span>,
+                <span id="birthDateOutput">Генерация даты</span>
+                <span id="birthYearOutput"> и </span> года рождения
+              </p>
+              <p>
+                Профессия:
+                <span id="occupation"></span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a
+                id="generate"
+                class="waves-effect waves-light btn green darken-2"
+              >
+                Generate
+              </a>
+              <a id="reset" class="waves-effect waves-light btn red"> Reset </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="collapsible expandable popout">
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">assignment</i>Задание
+          </div>
+          <div class="collapsible-body">
+            <div class="embed">
+              <p>
+                Создание генератора случайных пользовательских данных: ФИО,
+                пола, даты рождения и профессии. С&nbsp;возможностью сбрасывать
+                информацию.
+              </p>
+              <p>
+                Выбор данных происходит из заготовленных <em>JSON</em> значений
+                с помощью
+                <code style="background-color: #f0f8ff">Math.random</code>.
+              </p>
+              <p></p>
+              <h2><strong>ФИО</strong></h2>
+              <hr border="2px" width="40%" color="#00b43f" align="left" />
+              <p></p>
+              <p>
+                Женскую фамилию нельзя писать в <em>JSON</em>, она должна
+                происходить из предоставленных мужских фамилий. Женские имена
+                можно написать в качестве <em>JSON</em>. Требуется написать
+                дополнительные условия
+                <code style="background-color: #f0f8ff">if else</code> в
+                <code style="background-color: #f0f8ff">randomFirstName</code> и
+                <code style="background-color: #f0f8ff">randomSurname</code> для
+                женщин и мужчин.
+              </p>
+              <p></p>
+              <h2><strong>Пол</strong></h2>
+              <hr border="2px" width="40%" color="#00b43f" align="left" />
+              <p></p>
+              <p>
+                В генерации пола воспользуйтесь тернарным оператором и
+                переменными
+                <code style="background-color: #f0f8ff"
+                  >GENDER_MALE: 'Мужчина'</code
+                >,
+                <code style="background-color: #f0f8ff"
+                  >GENDER_FEMALE: 'Женщина'</code
+                >
+                из файла
+                <code style="background-color: #f0f8ff">personGenerator.js</code
+                >.
+              </p>
+              <p></p>
+              <h2><strong>Дата рождения</strong></h2>
+              <hr border="2px" width="40%" color="#00b43f" align="left" />
+              <p></p>
+              <p>
+                Для генерации года используйте <em>min</em>,
+                <em>max</em> значения из функции случайной генерации
+                <code style="background-color: #f0f8ff">randomIntNumber</code>.
+                Располагать года в явном виде внутри <em>JSON</em> нельзя.
+              </p>
+              <p></p>
+              <h2><strong>Кнопка удаления сгенерированных данных</strong></h2>
+              <hr border="2px" width="40%" color="#00b43f" align="left" />
+              <p></p>
+              <p>
+                Кнопка очистки должна удалять только сгенерированные значения,
+                не удаляя теги в&nbsp;<em>HTML</em> разметке.
+              </p>
+              <p></p>
+              <p>
+                <a
+                  href="https://github.com/SkillfactoryCoding/php/tree/master/bjs/10_function_object"
+                  target="_blank"
+                  ><span style="text-decoration: underline"
+                    >Шаблон проекта</span
+                  ></a
+                >
+                на <em>GitHub</em>.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">check_box</i>Критерии оценки
+          </div>
+          <div class="collapsible-body">
+            <div class="embed">
+              <h2><strong>Критерии оценки выполненного задания</strong></h2>
+              <p></p>
+              <div
+                style="
+                  padding: 15px;
+                  border: 2px solid #00b43f;
+                  max-width: 100%;
+                "
+              >
+                <p><strong>0 баллов</strong></p>
+                <p>Не выполнены условия на отметку 1.</p>
+                <p></p>
+                <p><strong>1 балл</strong></p>
+                <ul>
+                  <ul>
+                    <li>Добавлено&nbsp;<em>CSS</em> оформление.</li>
+                    <li>Добавлен пол, год рождения и фамилия.</li>
+                    <li>
+                      Имя и фамилия привязаны к полу. Для женских фамилий должно
+                      быть окончание на «а»: «Елена Морозова».
+                    </li>
+                  </ul>
+                </ul>
+                <p></p>
+                <p><strong>2 балла</strong></p>
+                <ul>
+                  <ul>
+                    <li>Выполнены условия на отметку 1.</li>
+                    <li>
+                      Добавлена генерация закреплённого за полом отчества в
+                      отдельном объекте, полученном от кода <em>JSON</em>&nbsp;.
+                      Не должно встречаться генерации мужского отчества в
+                      женской фамилии и имени.
+                    </li>
+                    <li>
+                      Добавлена профессия, есть её связь с полом. Например,
+                      женские имена и фамилии не могут быть слесарем, солдатом,
+                      шахтёром и так далее.
+                    </li>
+                  </ul>
+                </ul>
+                <p></p>
+                <p><strong>3 балла</strong></p>
+                <ul>
+                  <ul>
+                    <li>Выполнены условия на отметку 2.</li>
+                    <li>
+                      Добавлена генерация дня и месяца рождения. Месяц рождения
+                      написан текстом, например: «апреля», «мая».
+                    </li>
+                    <li>
+                      Ограничьте генерацию дней для месяцев, в которых
+                      встречается 28 и 30 дней.
+                    </li>
+                  </ul>
+                </ul>
+                <p></p>
+                <p><strong>4 балла</strong></p>
+                <ul>
+                  <ul>
+                    <li>Выполнены условия на отметку 3.</li>
+                    <li>
+                      Добавлена кнопка, активирующая генерацию всех данных.
+                    </li>
+                    <li>Добавлена кнопка очистки данных.</li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <!-- <iframe
+        src="info.html"
+        width="100%"
+        height="1400"
+        frameborder="0"
+      ></iframe> -->
+      <!--  -->
+      <!--       <div class="row game-card align-items-center">
+        <div class="col col-md-6 offset-md-3">
+          <div class="card text-center">
+            <div class="card-header">
+              <p class="m-0">Окно результатов генерации</p>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h3 class="card-title">
+                    <span id="surnameOutput">Генерация фамилии</span>
+                  </h3>
+                  <h4>Имя: 
+                    <span id="firstNameOutput">Иван</span>
+                  </h4>
+                  <p>
+                    <span id="genderOutput">Генерация пола</span>
+                    <span>, </span>
+                    <span id="birthYearOutput">Генерация года рождения</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!--  -->
+    </div>
+  </body>
+</html>
